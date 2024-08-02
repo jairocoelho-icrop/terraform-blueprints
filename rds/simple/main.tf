@@ -38,9 +38,7 @@ module "rds" {
   #db_name                = var.db_name
   username               = var.username
   port                   = var.port
-  #create_random_password = true
-  password   = var.password
-  create_random_password = var.replicate_source_db != null ? false : true
+  create_random_password = true
 
   vpc_security_group_ids = [module.security_group.security_group_id]
 
