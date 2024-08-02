@@ -175,10 +175,3 @@ variable "replicate_source_db" {
   type        = string
   default     = null
 }
-
-variable "password" {
-  description = "The password for the master DB user"
-  type        = string
-  sensitive   = true
-  default     = null
-}
