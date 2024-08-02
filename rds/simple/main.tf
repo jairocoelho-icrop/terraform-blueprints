@@ -34,7 +34,8 @@ module "rds" {
   storage_type          = var.storage_type
   iops                  = var.iops
 
-  db_name                = var.db_name
+  db_name                = var.replicate_source_db != null ? null : var.db_name
+  #db_name                = var.db_name
   username               = var.username
   port                   = var.port
   create_random_password = true
