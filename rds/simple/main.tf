@@ -18,6 +18,12 @@ locals {
   )
 }
 
+resource "random_password" "master_password" {
+  count     = var.replicate_source_db != null ? 0 : 1
+  length    = 16
+  special   = false
+}
+
 module "rds" {
   source  = "terraform-aws-modules/rds/aws"
   version = "~> 5.0"
