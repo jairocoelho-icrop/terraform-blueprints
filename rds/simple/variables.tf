@@ -169,3 +169,9 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "replicate_source_db" {
+  description = "The identifier of the source DB instance to replicate from"
+  type        = string
+  default     = null
+}

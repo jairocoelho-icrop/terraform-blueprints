@@ -27,6 +27,7 @@ module "rds" {
   engine         = var.engine
   engine_version = var.engine_version
   instance_class = var.instance_class
+  replicate_source_db  = var.replicate_source_db
 
   allocated_storage     = var.allocated_storage
   max_allocated_storage = var.max_allocated_storage
