@@ -86,3 +86,9 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "create_s3_bucket_policy" {
+  description = "Whether to create the S3 bucket policy"
+  type        = bool
+  default     = true
+}
