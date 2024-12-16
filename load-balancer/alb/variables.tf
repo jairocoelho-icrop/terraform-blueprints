@@ -73,3 +73,9 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "deregistration_delay" {
+  description = "The amount of time to wait in seconds before changing the state of a deregistering target to unused"
+  type        = number
+  default     = 300
+}

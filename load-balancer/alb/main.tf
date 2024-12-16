@@ -26,7 +26,7 @@ module "alb" {
   security_groups = [module.security_group_elb.security_group_id]
   idle_timeout    = var.idle_timeout
 
-  target_groups           = var.target_groups
+  target_groups           = [for tg in var.target_groups : merge(tg, { deregistration_delay = var.deregistration_delay })]
   http_tcp_listeners      = var.http_tcp_listeners
   http_tcp_listener_rules = var.http_tcp_listener_rules
   https_listeners         = var.https_listeners
